@@ -47,4 +47,4 @@ player.load("shopaholic_hawaii.swf"); // Load the Flash game (SWF file) into the
 }); 
 </script>
 </body>
-</html>
+</html> 
