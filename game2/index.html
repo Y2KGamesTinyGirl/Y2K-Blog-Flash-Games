@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-<meta charset="UTF-8"> 
-<title>Flash Game</title> 
+<head>
+  <meta charset="UTF-8">
+  <title>Flash Game</title>
 
-<script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script> 
+  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #000; /* Contraste com o efeito neon */
-  }
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000; /* Para contraste */
+    }
 
-  /* Container para o efeito da borda */
-  #border-wrapper {
-    width: 800px;
-    height: 600px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid #ff4500; /* Borda laranja */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 0 20px 5px rgba(255, 69, 0, 0.8); /* Efeito neon */
-    backdrop-filter: blur(10px); /* Efeito glass */
-  }
+    /* Container com borda simples */
+    #game-wrapper {
+      width: 800px;
+      height: 600px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid orange; /* Borda simples e laranja */
+    }
 
-  /* Container que vai abrigar o conteúdo do jogo */
-  #game-container {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-</style>
-
+    /* Container do jogo */
+    #game-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div id="border-wrapper">
+  <div id="game-wrapper">
     <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
   </div>
 
