@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo 1</title>
+  <script src="https://unpkg.com/ruffle.js"></script>
+</head>
+<body>
+  <h1>Bem-vindo ao Jogo 1!</h1>
+  
+  <!-- Container para o jogo SWF -->
+  <div id="flash-container"></div>
+
+  <script>
+    var ruffle = window.RufflePlayer.newest();
+    var player = ruffle.createPlayer();
+    document.getElementById('flash-container').appendChild(player);
+    player.load('main.swf');
+  </script>
+
+  <!-- Link para voltar à página principal -->
+  <a href="../index.html">Voltar à Página Principal</a>
+</body>
+</html>
