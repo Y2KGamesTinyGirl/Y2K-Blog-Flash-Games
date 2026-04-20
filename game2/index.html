@@ -15,31 +15,30 @@ body {
   margin: 0; 
 }
 
-#game-container { 
-  width: 800px; 
-  height: 600px; 
-  position: relative; 
-  top: 100px; 
-  left: 140px; 
+#border-container {
+  width: 800px;
+  height: 600px;
   border: 5px solid #ff4500; /* Borda laranja */
   border-radius: 15px; /* Bordas arredondadas */
   box-shadow: 0 0 20px 5px rgba(255, 69, 0, 0.8); /* Efeito neon */
   backdrop-filter: blur(10px); /* Efeito glass */
-  overflow: hidden; /* Garante que a borda não invada a área do jogo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 { 
-  position: absolute; 
-  top: 90px; 
-  text-align: center; 
+#game-container { 
   width: 100%; 
-  color: #333; 
+  height: 100%; 
+  overflow: hidden; /* Garante que o conteúdo do jogo não vaze para fora da borda */
 }
 </style>
 
 </head>
 <body> 
-  <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+  <div id="border-container">
+    <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+  </div>
 
   <script> 
     window.addEventListener("load", () => { 
