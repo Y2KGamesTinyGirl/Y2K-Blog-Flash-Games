@@ -1,18 +1,26 @@
-<style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8"> 
+<title></title> 
+
+<script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script> 
+
+<style> 
+body { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  margin: 0; 
 }
 
-#game-container {
-  width: 800px;
-  height: 600px;
-  position: relative;
-  top: 100px;
-  left: 140px;
+#game-container { 
+  width: 800px; 
+  height: 600px; 
+  position: relative; 
+  top: 100px; 
+  left: 140px; 
   border: 5px solid #ff4500; /* Borda laranja */
   border-radius: 15px; /* Bordas arredondadas */
   box-shadow: 0 0 20px 5px rgba(255, 69, 0, 0.8); /* Efeito neon */
@@ -20,11 +28,29 @@ body {
   padding: 10px;
 }
 
-h1 {
-  position: absolute;
-  top: 90px;
-  text-align: center;
-  width: 100%;
-  color: #333;
+h1 { 
+  position: absolute; 
+  top: 90px; 
+  text-align: center; 
+  width: 100%; 
+  color: #333; 
 }
 </style>
+
+</head>
+<body> 
+  <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+
+  <script> 
+    window.addEventListener("load", () => { 
+      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle 
+      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF 
+
+      const container = document.getElementById("game-container"); // Pega o container onde o jogo será inserido 
+      container.appendChild(player); // Adiciona o player ao container 
+
+      player.load("shopaholic_hawaii.swf"); // Carrega o jogo Flash (arquivo SWF) no player 
+    }); 
+  </script>
+</body>
+</html>
