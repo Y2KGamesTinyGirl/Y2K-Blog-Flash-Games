@@ -9,16 +9,17 @@
   <style>
     /* Estilo para centralizar o jogo na tela */
     html, body {
-      height: 50%;
+      height: 100%; /* Corrigido para preencher 100% da altura */
       margin: 0;
       display: flex;
-      justify-content: right;
-      align-items: right;
+      justify-content: center; /* Mantém o jogo centralizado horizontalmente */
+      align-items: flex-end; /* Alinha o conteúdo na parte inferior da tela */
       background-color: #f0f0f0; /* Cor de fundo */
     }
     #flash-game {
       width: 800px; /* Largura do jogo (ajuste conforme necessário) */
       height: 600px; /* Altura do jogo (ajuste conforme necessário) */
+      margin-bottom: 20px; /* Adiciona um pequeno espaço na parte inferior */
     }
   </style>
 </head>
