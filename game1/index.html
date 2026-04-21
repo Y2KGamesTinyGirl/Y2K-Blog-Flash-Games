@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo Flash com Ruffle</title>
-  <!-- Carrega o Ruffle via CDN -->
-  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
-  <style>
-    /* Estilo para centralizar o jogo na tela */
-    html, body {
-      height: 100%; /* Preenche 100% da altura da tela */
-      margin: 0;
-      display: flex;
-      justify-content: center; /* Centraliza o jogo horizontalmente */
-      align-items: flex-end; /* Alinha o conteúdo na parte inferior */
-      background-color: #FF69B4; /* Cor de fundo */
-    }
-    #flash-game {
-      width: 800px; /* Largura do jogo (ajuste conforme necessário) */
-      height: 600px; /* Altura do jogo (ajuste conforme necessário) */
-      margin-bottom: 20px; /* Adiciona um pequeno espaço abaixo do jogo */
-      
-      /* Estilo da borda laranja com efeito glass */
-      border: 10px solid orange; /* Borda laranja */
-      border-radius: 15px; /* Bordas arredondadas */
-      background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
-      backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
-      box-shadow: 0 4px 20px rgba(255, 165, 0, 0.5); /* Sombra suave laranja */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Divertida</title>
+    <style>
+        body {
+            background-color: #1e3a8a; /* Cor de fundo azul */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .caixa {
+            width: 200px;
+            height: 200px;
+            background-color: #fff; /* Fundo branco */
+            border-radius: 20px; /* Bordas arredondadas */
+            border: 10px solid transparent; /* Inicializa borda transparente */
+            background-image: linear-gradient(white, white), 
+                              radial-gradient(circle, #ff007f, #ff6600, #00ff00, #00ccff, #ffcc00, #ff007f); /* Borda colorida com gradiente */
+            background-origin: border-box; /* Aplica o gradiente ao redor da caixa */
+            background-clip: content-box, border-box; /* Garante que o gradiente cubra apenas a borda */
+            animation: bordaDivertida 4s infinite linear; /* Animação divertida */
+        }
+
+        /* Animação para a borda colorida */
+        @keyframes bordaDivertida {
+            0% {
+                background-image: radial-gradient(circle, #ff007f, #ff6600, #00ff00, #00ccff, #ffcc00, #ff007f);
+            }
+            50% {
+                background-image: radial-gradient(circle, #ff6600, #00ff00, #00ccff, #ff007f, #ffcc00, #ff6600);
+            }
+            100% {
+                background-image: radial-gradient(circle, #00ff00, #00ccff, #ff007f, #ff6600, #ffcc00, #00ff00);
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Área para carregar o jogo -->
-  <div id="flash-game">
-    <script>
-      // Inicializa o player Ruffle
-      var ruffle = window.RufflePlayer.newest();
-      var player = ruffle.createPlayer();
-      document.getElementById('flash-game').appendChild(player);
-
-      // Carrega o jogo SWF (substitua 'game.swf' pelo nome do seu arquivo SWF)
-      player.load('410250_burger_restaurant.swf');
-    </script>
-  </div>
-
+    <div class="caixa"></div>
 </body>
 </html>
