@@ -7,14 +7,26 @@
     <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fab3dd; /* Cor de fundo da página */
+        }
+
         #game-container {
             width: 800px;
             height: 600px;
-            border: 5px solid #000; /* Borda preta ao redor do jogo */
-            margin: 5px auto; /* Centraliza o container na página */
+            position: relative;
+            top: 100px;
+            left: 140px;
         }
 
         h1 {
+            position: absolute;
+            top: 20px;
             text-align: center;
             width: 100%;
             color: #333;
