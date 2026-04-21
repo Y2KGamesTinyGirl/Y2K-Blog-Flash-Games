@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Flash Game</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Flash com Ruffle</title>
+  <!-- Carrega o Ruffle via CDN -->
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
-
   <style>
-    body {
+    /* Estilo para centralizar o jogo na tela */
+    html, body {
+      height: 100%; /* Corrigido para preencher 100% da altura */
+      margin: -0;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #000; /* Para contraste */
+      justify-content: right; /* Mantém o jogo centralizado horizontalmente */
+      align-items: flex-end; /* Alinha o conteúdo na parte inferior da tela */
+      background-color: #FF69B4; /* Cor de fundo */
     }
-
-    /* Container sem borda */
-    #game-wrapper {
-      width: 800px;
-      height: 600px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Container do jogo */
-    #game-container {
-      width: 100%;
-      height: 100%;
+    #flash-game {
+      width: 800px; /* Largura do jogo (ajuste conforme necessário) */
+      height: 600px; /* Altura do jogo (ajuste conforme necessário) */
+      margin-bottom: 0px; /* Adiciona um pequeno espaço na parte inferior */
     }
   </style>
 </head>
 <body>
-  <div id="game-wrapper">
-    <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+
+  <!-- Área para carregar o jogo -->
+  <div id="flash-game">
+    <script>
+      // Inicializa o player Ruffle
+      var ruffle = window.RufflePlayer.newest();
+      var player = ruffle.createPlayer();
+      document.getElementById('flash-game').appendChild(player);
+
+      // Carrega o jogo SWF (substitua 'game.swf' pelo nome do seu arquivo SWF)
+      player.load('410250_burger_restaurant.swf');
+    </script>
   </div>
 
-  <script>
-    window.addEventListener("load", () => {
-      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle
-      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF
-
-      const container = document.getElementById("game-container"); // Pega o container onde o jogo será inserido
-      container.appendChild(player); // Adiciona o player ao container
-
-      player.load("shopaholic_hawaii.swf"); // Carrega o jogo Flash (arquivo SWF) no player
-    });
-  </script>
 </body>
 </html>
+
+pode adicionar uma borda laranja bonita com efeito glass a tela do jogo
