@@ -4,82 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo Flash com Ruffle</title>
-
   <!-- Carrega o Ruffle via CDN -->
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
-
   <style>
-    /* Estilo para centralizar o conteúdo na tela */
+    /* Estilo para centralizar o jogo na tela */
     html, body {
-      height: 100%; /* Garantir que a tela ocupe 100% da altura */
-      margin: 0; /* Remover margens padrão */
+      height: 100%; /* Corrigido para preencher 100% da altura */
+      margin: -0;
       display: flex;
-      justify-content: center; /* Centralizar horizontalmente */
-      align-items: center; /* Centralizar verticalmente */
-      background-color: #FF69B4; /* Cor de fundo da tela */
+      justify-content: right; /* Mantém o jogo centralizado horizontalmente */
+      align-items: flex-end; /* Alinha o conteúdo na parte inferior da tela */
+      background-color: #FF69B4; /* Cor de fundo */
     }
-
-    /* Contêiner do jogo com borda */
-    #flash-game-container {
-      width: 3000px; /* Tamanho fixo do contêiner */
-      height: 768px; /* Tamanho fixo do contêiner */
-      border: 5px solid #000; /* Borda inicial de 5px */
-      position: relative; /* Definir como relativo para posicionar o jogador */
-      overflow: hidden; /* Evitar que o jogo ultrapasse os limites do contêiner */
-      transition: border 0.3s ease; /* Transição suave para ajustes de borda */
-    }
-
-    /* Estilo para o jogo */
     #flash-game {
-      width: 100%; /* O jogo ocupará 100% do espaço do contêiner */
-      height: 100%; /* O jogo ocupará 100% da altura do contêiner */
-      object-fit: contain; /* Garante que o jogo se ajuste sem distorções */
-    }
-
-    /* Estilo para o controle da borda */
-    #border-control {
-      margin-top: 20px; /* Espaço entre o controle e o jogo */
-      text-align: center;
+      width: 1000px; /* Largura do jogo (ajuste conforme necessário) */
+      height: 600px; /* Altura do jogo (ajuste conforme necessário) */
+      margin-bottom: 0px; /* Adiciona um pequeno espaço na parte inferior */
     }
   </style>
 </head>
 <body>
 
-  <!-- Contêiner do jogo -->
-  <div id="flash-game-container">
-    <div id="flash-game"></div>
+  <!-- Área para carregar o jogo -->
+  <div id="flash-game">
+    <script>
+      // Inicializa o player Ruffle
+      var ruffle = window.RufflePlayer.newest();
+      var player = ruffle.createPlayer();
+      document.getElementById('flash-game').appendChild(player);
+
+      // Carrega o jogo SWF (substitua 'game.swf' pelo nome do seu arquivo SWF)
+      player.load('410250_burger_restaurant.swf');
+    </script>
   </div>
-
-  <!-- Controle para ajustar o tamanho da borda -->
-  <div id="border-control">
-    <label for="border-size">Ajustar tamanho da borda (px): </label>
-    <input type="range" id="border-size" min="1" max="50" value="5">
-    <span id="border-value">5px</span>
-  </div>
-
-  <script>
-    // Inicializa o player do Ruffle
-    var ruffle = window.RufflePlayer.newest();
-    var player = ruffle.createPlayer();
-    
-    // Anexa o player ao contêiner
-    document.getElementById('flash-game').appendChild(player);
-
-    // Carrega o arquivo SWF do jogo (substitua pelo seu arquivo)
-    player.load('410250_burger_restaurant.swf');
-
-    // Controle da borda
-    const borderControl = document.getElementById('border-size');
-    const borderValue = document.getElementById('border-value');
-    const gameContainer = document.getElementById('flash-game-container');
-
-    // Atualiza o valor da borda e a borda real do contêiner
-    borderControl.addEventListener('input', function() {
-      const borderSize = borderControl.value;
-      gameContainer.style.borderWidth = borderSize + 'px'; // Ajusta a borda
-      borderValue.textContent = borderSize + 'px'; // Atualiza o valor mostrado ao usuário
-    });
-  </script>
 
 </body>
 </html>
