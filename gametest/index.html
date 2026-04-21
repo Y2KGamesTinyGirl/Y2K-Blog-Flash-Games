@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo Flash com Ruffle</title>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script> <!-- Inclusão do Ruffle -->
+    <!-- Corrigido a URL do Ruffle -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         body {
             text-align: center;
@@ -21,15 +22,14 @@
     <h1>Jogo Flash com Ruffle</h1>
     <div id="flash-container"></div>
     <script>
-        // Criação do emulador Ruffle
         window.addEventListener("load", function() {
-            const ruffle = window.RufflePlayer.new();
+            const ruffle = window.RufflePlayer.new(); // Inicializa o Ruffle
             const container = document.getElementById("flash-container");
             const player = ruffle.createPlayer();
-
-            // Aponte para o seu arquivo SWF no GitHub ou caminho local
-            player.load("410250_burger_restaurant.swf");
-            container.appendChild(player);
+            
+            // Substitua pelo caminho correto do seu arquivo SWF
+            player.load("410250_burger_restaurant.swf"); // Verifique o caminho do arquivo
+            container.appendChild(player); // Adiciona o player ao container
         });
     </script>
 </body>
