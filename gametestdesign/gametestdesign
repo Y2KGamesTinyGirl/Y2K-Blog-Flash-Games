@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>🌺 Y2K Games</title>
 
     <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #FFC7EA; /* Cor de fundo da página */
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* Gradiente rosa e azul típico da internet Y2K */
         }
 
         #game-container {
@@ -22,11 +22,25 @@
             position: center;
             top: 100px;
             left: 100px;
-            border: 20px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
-            border-radius: 55px; /* Bordas arredondadas */
-            background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
-            box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
-            backdrop-filter: blur(50px); /* Efeito de desfoque para imitar vidro */
+            border: 12px solid #FF66B2; /* Cor de borda neon (rosa) */
+            border-radius: 40px; /* Bordas arredondadas com estilo mais moderno */
+            background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente para o toque futurista */
+            box-shadow: 0 0 20px 5px rgba(255, 102, 178, 0.8); /* Efeito neon rosa nas bordas */
+            backdrop-filter: blur(10px); /* Desfoque do fundo para dar aquele toque moderno */
+            overflow: hidden;
+            position: relative;
+        }
+
+        #game-container:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente com sombra suave */
+            border-radius: 50px;
+            z-index: -1;
         }
 
         h1 {
@@ -34,12 +48,18 @@
             top: 20px;
             text-align: center;
             width: 100%;
-            color: #333;
+            color: #fff;
+            font-family: 'DotGothic16', sans-serif; /* Fonte digital estilo coreano / Y2K */
+            font-size: 36px;
+            text-shadow: 0 0 10px rgba(255, 102, 178, 0.9); /* Efeito de brilho */
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> <!-- Fonte estilo digital coreano -->
 </head>
 <body>
-    <div id="game-container"></div>
+    <div id="game-container">
+        <!-- O conteúdo do jogo vai aqui -->
+    </div>
 
     <script>
         window.addEventListener("load", () => {
