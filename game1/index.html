@@ -7,47 +7,28 @@
   <style>
     body {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #ffffff; /* Cor de fundo inicial */
-      flex-direction: column;
+      justify-content: center; /* Alinha horizontalmente */
+      align-items: center;     /* Alinha verticalmente */
+      height: 100vh;           /* Ocupa 100% da altura da tela */
+      margin: 0;               /* Remove a margem padrão */
+      background-color: #ffffff; /* Cor de fundo da página */
     }
 
     #game-container {
-      width: 800px;
-      height: 600px;
-    }
-
-    input {
-      margin-top: 20px;
-      padding: 10px;
-      font-size: 16px;
-      width: 250px;
-      text-align: center;
+      width: 800px;  /* Largura do jogo */
+      height: 600px; /* Altura do jogo */
     }
   </style>
 </head>
 <body>
   <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
-  <input type="text" id="bg-color" placeholder="Digite a cor (ex: #ff5733)" />
 
   <script>
     window.addEventListener("load", () => {
       const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle
-      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF
-      document.getElementById("game-container").appendChild(player); // Adiciona o player ao container
-      player.load("410250_burger_restaurant.swf"); // Carrega o arquivo SWF do jogo
-
-      // Função para alterar a cor de fundo
-      const colorInput = document.getElementById("bg-color");
-      colorInput.addEventListener("input", function() {
-        // Verifica se a cor é válida
-        if(/^#[0-9A-F]{6}$/i.test(this.value)) {
-          document.body.style.backgroundColor = this.value;
-        }
-      });
+      const player = ruffle.createPlayer();        // Cria o player para rodar o arquivo SWF
+      document.getElementById("410250_burger_restaurant.swf").appendChild(player); // Adiciona o player ao container
+      player.load("shopaholic_hawaii.swf"); // Carrega o jogo
     });
   </script>
 </body>
