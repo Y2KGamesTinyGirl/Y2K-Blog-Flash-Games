@@ -13,18 +13,20 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #fab3dd; /* Cor de fundo da página */
+            background-color: #FFC7EA; /* Cor de fundo da página */
         }
 
         #game-container {
-            width: 800px;
-            height: 600px;
-            position: relative; /* Permite mover o jogo */
-            top: 50px; /* Distância do topo */
-            left: 100px; /* Distância da esquerda */
-            border: 10px solid #ff5733; /* Margem colorida ao redor do jogo */
+            width: 550px;
+            height: 400px;
+            position: center;
+            top: 100px;
+            left: 100px;
+            border: 2px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
             border-radius: 15px; /* Bordas arredondadas */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave para dar um efeito de profundidade */
+            background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
+            box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
+            backdrop-filter: blur(10px); /* Efeito de desfoque para imitar vidro */
         }
 
         h1 {
@@ -32,12 +34,11 @@
             top: 20px;
             text-align: center;
             width: 100%;
-            color: #333; /* Cor do título */
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1></h1>
     <div id="game-container"></div>
 
     <script>
@@ -48,7 +49,7 @@
             const container = document.getElementById("game-container");
             container.appendChild(player);
 
-            player.load("Puanli_Giydirme_21.swf");
+            player.load("410250_burger_restaurant.swf");
         });
     </script>
 </body>
