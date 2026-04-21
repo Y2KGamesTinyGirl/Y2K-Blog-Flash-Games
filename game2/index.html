@@ -6,33 +6,46 @@
   <title>Jogo Flash com Ruffle</title>
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
   <style>
-    /* Estilo para centralizar o jogo na tela */
     html, body {
-      height: 100%; /* Corrigido para preencher 100% da altura */
-      margin: 0; /* Remove a margem padrão */
+      height: 100%;
+      margin: 0;
       display: flex;
-      justify-content: center; /* Alinha o jogo ao centro horizontal */
-      align-items: center; /* Alinha o jogo ao centro vertical */
-      background-color: #FF69B4; /* Cor de fundo */
+      justify-content: center;
+      align-items: center;
+      background-color: #FF69B4; /* Cor de fundo da página */
+    }
+    #flash-game-container {
+      position: relative;
+      width: 800px; /* Largura do contêiner */
+      height: 600px; /* Altura do contêiner */
+      border: 5px solid #000; /* Borda ao redor do jogo */
+      box-sizing: border-box;
     }
     #flash-game {
-      width: 800px; /* Largura do jogo (ajuste conforme necessário) */
-      height: 600px; /* Altura do jogo (ajuste conforme necessário) */
-      border: 5px solid #000; /* Borda preta de 5px ao redor do jogo */
-      box-sizing: border-box; /* Garantir que a borda não afete o tamanho do contêiner */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Evita que o jogo se estique ou distorça */
     }
   </style>
 </head>
 <body>
 
-  <div id="flash-game">
-    <script>
-      var ruffle = window.RufflePlayer.newest();
-      var player = ruffle.createPlayer();
-      document.getElementById('flash-game').appendChild(player);
-      player.load('shopaholic_hawaii.swf');
-    </script>
+  <!-- Contêiner para o jogo com borda -->
+  <div id="flash-game-container">
+    <div id="flash-game"></div>
   </div>
+
+  <script>
+    var ruffle = window.RufflePlayer.newest();
+    var player = ruffle.createPlayer();
+    document.getElementById('flash-game').appendChild(player);
+
+    // Carrega o jogo SWF
+    player.load('shopaholic_hawaii.swf');
+  </script>
 
 </body>
 </html>
