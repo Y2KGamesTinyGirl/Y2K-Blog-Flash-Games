@@ -9,17 +9,24 @@
   <style>
     /* Estilo para centralizar o jogo na tela */
     html, body {
-      height: 100%; /* Corrigido para preencher 100% da altura */
-      margin: -0;
+      height: 100%; /* Preenche 100% da altura da tela */
+      margin: 0;
       display: flex;
-      justify-content: right; /* Mantém o jogo centralizado horizontalmente */
-      align-items: flex-end; /* Alinha o conteúdo na parte inferior da tela */
+      justify-content: center; /* Centraliza o jogo horizontalmente */
+      align-items: flex-end; /* Alinha o conteúdo na parte inferior */
       background-color: #FF69B4; /* Cor de fundo */
     }
     #flash-game {
       width: 800px; /* Largura do jogo (ajuste conforme necessário) */
       height: 600px; /* Altura do jogo (ajuste conforme necessário) */
-      margin-bottom: 0px; /* Adiciona um pequeno espaço na parte inferior */
+      margin-bottom: 20px; /* Adiciona um pequeno espaço abaixo do jogo */
+      
+      /* Estilo da borda laranja com efeito glass */
+      border: 10px solid orange; /* Borda laranja */
+      border-radius: 15px; /* Bordas arredondadas */
+      background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+      backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+      box-shadow: 0 4px 20px rgba(255, 165, 0, 0.5); /* Sombra suave laranja */
     }
   </style>
 </head>
