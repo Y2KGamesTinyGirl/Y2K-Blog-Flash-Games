@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> 
-  <meta charset="UTF-8"> 
-  <title>Jogo Flash</title> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Flash com Ruffle</title>
 
-  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script> 
+  <!-- Carrega o Ruffle via CDN -->
+  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
-  <style> 
-    body { 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh; 
-      margin: 0; 
-    } 
+  <style>
+    /* Estilo para centralizar o conteúdo na tela */
+    html, body {
+      height: 100%; /* Garantir que a tela ocupe 100% da altura */
+      margin: 0; /* Remover margens padrão */
+      display: flex;
+      justify-content: center; /* Centralizar horizontalmente */
+      align-items: center; /* Centralizar verticalmente */
+      background-color: #FF69B4; /* Cor de fundo da tela */
+    }
 
-    #game-container { 
-      width: 800px; 
-      height: 600px; 
-      position: relative; 
-      top: 100px; 
-      left: 140px; 
-      border: 2px solid #000; /* Borda preta de 2px ao redor do container do jogo */
-    } 
+    /* Contêiner do jogo com borda */
+    #flash-game-container {
+      width: 800px; /* Defina o tamanho do contêiner */
+      height: 600px; /* Defina a altura do contêiner */
+      border: 5px solid #000; /* Borda preta de 5px */
+      position: relative; /* Definir como relativo para posicionar o jogador */
+      overflow: hidden; /* Garantir que o conteúdo do jogo não ultrapasse os limites */
+    }
 
-    h1 { 
-      position: absolute; 
-      top: 90px; 
-      text-align: center; 
-      width: 100%; 
-      color: #333; 
-    } 
+    /* Estilo para o jogo */
+    #flash-game {
+      width: 100%; /* O jogo ocupará 100% do espaço do contêiner */
+      height: 100%; /* O jogo ocupará 100% da altura do contêiner */
+      object-fit: contain; /* Garante que o jogo não distorça, apenas se ajusta ao contêiner */
+    }
   </style>
 </head>
-<body> 
-  <div id="game-container"></div> <!-- Container onde o jogo será carregado --> 
+<body>
 
-  <script> 
-    window.addEventListener("load", () => { 
-      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player do Ruffle 
-      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF 
+  <!-- Contêiner onde o jogo será carregado -->
+  <div id="flash-game-container">
+    <div id="flash-game"></div>
+  </div>
 
-      const container = document.getElementById("game-container"); // Pega o container onde o jogo será inserido 
-      container.appendChild(player); // Adiciona o player ao container 
+  <script>
+    // Inicializa o player do Ruffle
+    var ruffle = window.RufflePlayer.newest();
+    var player = ruffle.createPlayer();
+    
+    // Anexa o player ao contêiner
+    document.getElementById('flash-game').appendChild(player);
 
-      player.load("410250_burger_restaurant.swf"); // Carrega o jogo Flash (arquivo SWF) no player 
-    }); 
+    // Carrega o arquivo SWF do jogo (substitua pelo seu arquivo)
+    player.load('410250_burger_restaurant.swf');
   </script>
+
 </body>
 </html>
