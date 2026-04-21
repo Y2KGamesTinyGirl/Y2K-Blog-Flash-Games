@@ -21,26 +21,40 @@
 
     /* Contêiner do jogo com borda */
     #flash-game-container {
-      width: 800px; /* Defina o tamanho do contêiner */
-      height: 600px; /* Defina a altura do contêiner */
-      border: 5px solid #000; /* Borda preta de 5px */
+      width: 1024px; /* Tamanho fixo do contêiner */
+      height: 768px; /* Tamanho fixo do contêiner */
+      border: 5px solid #000; /* Borda inicial de 5px */
       position: relative; /* Definir como relativo para posicionar o jogador */
-      overflow: hidden; /* Garantir que o conteúdo do jogo não ultrapasse os limites */
+      overflow: hidden; /* Evitar que o jogo ultrapasse os limites do contêiner */
+      transition: border 0.3s ease; /* Transição suave para ajustes de borda */
     }
 
     /* Estilo para o jogo */
     #flash-game {
       width: 100%; /* O jogo ocupará 100% do espaço do contêiner */
       height: 100%; /* O jogo ocupará 100% da altura do contêiner */
-      object-fit: contain; /* Garante que o jogo não distorça, apenas se ajusta ao contêiner */
+      object-fit: contain; /* Garante que o jogo se ajuste sem distorções */
+    }
+
+    /* Estilo para o controle da borda */
+    #border-control {
+      margin-top: 20px; /* Espaço entre o controle e o jogo */
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- Contêiner onde o jogo será carregado -->
+  <!-- Contêiner do jogo -->
   <div id="flash-game-container">
     <div id="flash-game"></div>
+  </div>
+
+  <!-- Controle para ajustar o tamanho da borda -->
+  <div id="border-control">
+    <label for="border-size">Ajustar tamanho da borda (px): </label>
+    <input type="range" id="border-size" min="1" max="50" value="5">
+    <span id="border-value">5px</span>
   </div>
 
   <script>
@@ -53,6 +67,18 @@
 
     // Carrega o arquivo SWF do jogo (substitua pelo seu arquivo)
     player.load('410250_burger_restaurant.swf');
+
+    // Controle da borda
+    const borderControl = document.getElementById('border-size');
+    const borderValue = document.getElementById('border-value');
+    const gameContainer = document.getElementById('flash-game-container');
+
+    // Atualiza o valor da borda e a borda real do contêiner
+    borderControl.addEventListener('input', function() {
+      const borderSize = borderControl.value;
+      gameContainer.style.borderWidth = borderSize + 'px'; // Ajusta a borda
+      borderValue.textContent = borderSize + 'px'; // Atualiza o valor mostrado ao usuário
+    });
   </script>
 
 </body>
