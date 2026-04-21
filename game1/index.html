@@ -8,49 +8,40 @@
 
 <style> 
 body { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  margin: 0; 
-}
+display: flex; 
+justify-content: center; 
+align-items: center; 
+height: 100vh; 
+margin: 0; 
+} 
 
 #game-container { 
-  width: 800px; 
-  height: 600px; 
-  position: relative; 
-  top: 100px; 
-  left: 140px; 
-  border: 5px solid #ff4500; /* Borda laranja */
-  border-radius: 15px; /* Bordas arredondadas */
-  box-shadow: 0 0 20px 5px rgba(255, 69, 0, 0.8); /* Efeito neon */
-  backdrop-filter: blur(10px); /* Efeito glass */
-  padding: 10px;
-}
+width: 800px; 
+height: 600px; 
+position: relative; 
+top: 100px; 
+left: 140px; 
+} 
 
 h1 { 
-  position: absolute; 
-  top: 90px; 
-  text-align: center; 
-  width: 100%; 
-  color: #333; 
-}
+position: absolute; 
+top: 90px; 
+text-align: center; 
+width: 100%; 
+color: #333; 
+} 
 </style>
-
 </head>
 <body> 
-  <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+<div id="game-container"></div> <!-- Container where the game will be loaded --> 
 
-  <script> 
-    window.addEventListener("load", () => { 
-      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle 
-      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF 
+<script> 
+window.addEventListener("load", () => { 
+const ruffle = window.RufflePlayer.newest(); // Create the newest version of the Ruffle player 
+const player = ruffle.createPlayer(); // Create the player to run the SWF file 
 
-      const container = document.getElementById("game-container"); // Pega o container onde o jogo será inserido 
-      container.appendChild(player); // Adiciona o player ao container 
+const container = document.getElementById("game-container"); // Get the container where the game will be inserted 
+container.appendChild(player); //Append the player to the container 
 
-      player.load("410250_burger_restaurant.swf"); // Carrega o jogo Flash (arquivo SWF) no player 
-    }); 
-  </script>
-</body>
-</html> 
+player.load("YourGameHere.swf"); // Load the Flash game (SWF file) into the player 
+});  
