@@ -18,31 +18,35 @@
     #game-container {
       width: 800px;
       height: 600px;
-      position: relative;
     }
 
     input {
       margin-top: 20px;
       padding: 10px;
       font-size: 16px;
-      width: 200px;
+      width: 250px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
-  <input type="text" id="bg-color" placeholder="Digite a cor de fundo (ex: #ff5733)" />
+  <input type="text" id="bg-color" placeholder="Digite a cor (ex: #ff5733)" />
 
   <script>
     window.addEventListener("load", () => {
-      const ruffle = window.RufflePlayer.newest();
-      const player = ruffle.createPlayer();
-      document.getElementById("game-container").appendChild(player);
-      player.load("410250_burger_restaurant.swf"); // Carrega o jogo
+      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle
+      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF
+      document.getElementById("game-container").appendChild(player); // Adiciona o player ao container
+      player.load("410250_burger_restaurant.swf"); // Carrega o arquivo SWF do jogo
 
-      // Função para atualizar a cor de fundo
-      document.getElementById("bg-color").addEventListener("input", function() {
-        document.body.style.backgroundColor = this.value;
+      // Função para alterar a cor de fundo
+      const colorInput = document.getElementById("bg-color");
+      colorInput.addEventListener("input", function() {
+        // Verifica se a cor é válida
+        if(/^#[0-9A-F]{6}$/i.test(this.value)) {
+          document.body.style.backgroundColor = this.value;
+        }
       });
     });
   </script>
