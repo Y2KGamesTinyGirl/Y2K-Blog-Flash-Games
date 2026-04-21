@@ -4,16 +4,46 @@
   <meta charset="UTF-8">
   <title>Flash Game</title>
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffffff; /* Cor de fundo inicial */
+      flex-direction: column;
+    }
+
+    #game-container {
+      width: 800px;
+      height: 600px;
+      position: relative;
+    }
+
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+  </style>
 </head>
 <body>
   <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+  <input type="text" id="bg-color" placeholder="Digite a cor de fundo (ex: #ff5733)" />
 
   <script>
     window.addEventListener("load", () => {
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
       document.getElementById("game-container").appendChild(player);
-      player.load("410250_burger_restaurant.swf"); // Carrega o jogo
+      player.load("shopaholic_hawaii.swf"); // Carrega o jogo
+
+      // Função para atualizar a cor de fundo
+      document.getElementById("bg-color").addEventListener("input", function() {
+        document.body.style.backgroundColor = this.value;
+      });
     });
   </script>
 </body>
