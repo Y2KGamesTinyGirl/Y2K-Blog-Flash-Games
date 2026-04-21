@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caixa Divertida</title>
+    <title>Página com Estilo Glass</title>
     <style>
         body {
-            background-color: #1e3a8a; /* Cor de fundo azul */
+            background: url('https://via.placeholder.com/1500') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        .caixa {
-            width: 200px;
-            height: 200px;
-            background-color: #fff; /* Fundo branco */
-            border-radius: 20px; /* Bordas arredondadas */
-            border: 10px solid transparent; /* Inicializa borda transparente */
-            background-image: linear-gradient(white, white), 
-                              radial-gradient(circle, #ff007f, #ff6600, #00ff00, #00ccff, #ffcc00, #ff007f); /* Borda colorida com gradiente */
-            background-origin: border-box; /* Aplica o gradiente ao redor da caixa */
-            background-clip: content-box, border-box; /* Garante que o gradiente cubra apenas a borda */
-            animation: bordaDivertida 4s infinite linear; /* Animação divertida */
-        }
-
-        /* Animação para a borda colorida */
-        @keyframes bordaDivertida {
-            0% {
-                background-image: radial-gradient(circle, #ff007f, #ff6600, #00ff00, #00ccff, #ffcc00, #ff007f);
-            }
-            50% {
-                background-image: radial-gradient(circle, #ff6600, #00ff00, #00ccff, #ff007f, #ffcc00, #ff6600);
-            }
-            100% {
-                background-image: radial-gradient(circle, #00ff00, #00ccff, #ff007f, #ff6600, #ffcc00, #00ff00);
-            }
+        .glass-box {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.3); /* Cor branca com transparência */
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.6); /* Borda com efeito suave */
+            backdrop-filter: blur(10px); /* Efeito de desfoque de fundo */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
     </style>
 </head>
 <body>
-    <div class="caixa"></div>
+    <div class="glass-box"></div>
 </body>
 </html>
