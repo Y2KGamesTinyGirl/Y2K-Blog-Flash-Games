@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Estilo Glass</title>
+    <title>Página com Borda Glass Neon Rosa</title>
     <style>
         body {
             background: url('https://via.placeholder.com/1500') no-repeat center center fixed;
@@ -19,11 +19,40 @@
         .glass-box {
             width: 300px;
             height: 300px;
-            background-color: rgba(255, 255, 255, 0.3); /* Cor branca com transparência */
+            background-color: rgba(255, 255, 255, 0.1); /* Cor branca com transparência */
             border-radius: 15px;
             border: 2px solid rgba(255, 255, 255, 0.6); /* Borda com efeito suave */
             backdrop-filter: blur(10px); /* Efeito de desfoque de fundo */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        /* Borda neon rosa */
+        .glass-box::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, rgba(255, 20, 147, 0.6), rgba(255, 105, 180, 0.9)); /* Gradiente rosa neon */
+            z-index: -2;
+            filter: blur(10px); /* Efeito de difusão do brilho */
+            box-shadow: 0 0 30px 10px rgba(255, 20, 147, 0.8), 0 0 15px 5px rgba(255, 105, 180, 0.8); /* Brilho da borda */
         }
     </style>
 </head>
