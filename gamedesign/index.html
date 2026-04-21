@@ -16,7 +16,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #FF8C00; /* Fundo laranja vibrante */
+            background-color: #FFD1DC; /* Rosa claro e suave */
         }
 
         /* Estilo da janela (borda do Windows) */
@@ -25,18 +25,24 @@
             height: 400px;
             position: relative;
             background: rgba(255, 255, 255, 0.2);
-            border: 20px solid #FF66B2; /* Borda bem mais grossa e rosa */
+            border: 30px solid #FF66B2; /* Borda mais grossa e rosa */
             border-radius: 40px;
             box-shadow: 0 0 20px 5px rgba(255, 102, 178, 0.8);
             backdrop-filter: blur(10px);
             overflow: hidden;
-            animation: neon 1.5s ease-in-out infinite alternate; /* Efeito neon */
+            animation: neon 1.5s ease-in-out infinite alternate; /* Efeito neon com borda animada */
         }
 
         /* Animação de efeito neon */
         @keyframes neon {
-            0% { box-shadow: 0 0 10px rgba(255, 0, 255, 1); }
-            100% { box-shadow: 0 0 80px rgba(255, 0, 255, 1); }
+            0% {
+                box-shadow: 0 0 10px rgba(255, 102, 178, 1);
+                border: 30px solid #FF66B2;
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 102, 178, 1); /* Aumenta o brilho */
+                border: 30px solid #FF33B2; /* A borda ganha um tom mais intenso */
+            }
         }
 
         /* Botão neon estilizado */
