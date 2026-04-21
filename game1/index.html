@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Jogo Flash com Ruffle</title>
   <!-- Carrega o Ruffle via CDN -->
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
   <style>
-    /* CSS para centralizar o conteúdo */
-    body, html {
-      height: 100%;  /* Garante que o body e html ocupem toda a altura */
+    /* Estilo para centralizar o jogo na tela */
+    html, body {
+      height: 100%;
       margin: 0;
       display: flex;
-      justify-content: center;  /* Centraliza horizontalmente */
-      align-items: center;      /* Centraliza verticalmente */
-      background-color: #f0f0f0;  /* Cor de fundo suave */
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0; /* Cor de fundo */
     }
-
     #flash-game {
-      width: 80vw;  /* 80% da largura da tela */
-      height: 80vh; /* 80% da altura da tela */
-      max-width: 800px;  /* Limita a largura máxima */
-      max-height: 600px; /* Limita a altura máxima */
+      width: 800px; /* Largura do jogo (ajuste conforme necessário) */
+      height: 600px; /* Altura do jogo (ajuste conforme necessário) */
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align: center;"></h1>
 
   <!-- Área para carregar o jogo -->
   <div id="flash-game">
@@ -37,7 +33,7 @@
       document.getElementById('flash-game').appendChild(player);
 
       // Carrega o jogo SWF (substitua 'game.swf' pelo nome do seu arquivo SWF)
-      player.load('410250_burger_restaurant.swf');
+      player.load('game.swf');
     </script>
   </div>
 
