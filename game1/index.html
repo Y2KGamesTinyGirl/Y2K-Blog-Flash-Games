@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Flash Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Flash com Ruffle</title>
+  <!-- Carrega o Ruffle via CDN -->
   <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
-  <style>
-    body {
-      display: flex;
-      justify-content: center; /* Alinha horizontalmente */
-      align-items: center;     /* Alinha verticalmente */
-      height: 100vh;           /* Ocupa 100% da altura da tela */
-      margin: 0;               /* Remove a margem padrão */
-      background-color: #ffffff; /* Cor de fundo da página */
-    }
-
-    #game-container {
-      width: 800px;  /* Largura do jogo */
-      height: 600px; /* Altura do jogo */
-    }
-  </style>
 </head>
 <body>
-  <div id="game-container"></div> <!-- Container onde o jogo será carregado -->
+  <h1>Jogo Flash com Ruffle</h1>
 
-  <script>
-    window.addEventListener("load", () => {
-      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player Ruffle
-      const player = ruffle.createPlayer();        // Cria o player para rodar o arquivo SWF
-      document.getElementById("410250_burger_restaurant.swf").appendChild(player); // Adiciona o player ao container
-      player.load("410250_burger_restaurant.swf"); // Carrega o jogo
-    });
-  </script>
+  <!-- Área para carregar o jogo -->
+  <div id="flash-game">
+    <script>
+      // Inicializa o player Ruffle
+      var ruffle = window.RufflePlayer.newest();
+      var player = ruffle.createPlayer();
+      document.getElementById('flash-game').appendChild(player);
+
+      // Carrega o jogo SWF (substitua 'game.swf' pelo nome do seu arquivo SWF)
+      player.load('game.swf');
+    </script>
+  </div>
+
 </body>
 </html>
