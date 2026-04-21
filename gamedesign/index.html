@@ -16,7 +16,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #F1A7C6, #A3E4B1); /* Rosa Barbie e Verde feminino */
+            background: linear-gradient(135deg, #FF007F, #00FF70); /* Rosa saturado e verde saturado */
         }
 
         #game-container {
@@ -47,7 +47,7 @@
 
     <!-- Container para o conteúdo do jogo -->
     <div id="game-container">
-        <!-- Sem texto ou botões agora -->
+        <!-- Sem texto ou botões -->
     </div>
 
     <!-- Adicionando partículas interativas -->
@@ -61,15 +61,15 @@
                     value: 100,
                     density: { enable: true, value_area: 800 }
                 },
-                color: { value: "#FF3366" },
+                color: { value: "#FFFF00" }, /* Partículas amarelas vibrantes */
                 shape: {
                     type: "circle",
                     stroke: { width: 0, color: "#fff" }
                 },
-                opacity: { value: 0.5 },
+                opacity: { value: 0.7 },
                 size: { value: 5 },
                 line_linked: { enable: false },
-                move: { enable: true, speed: 2, direction: "none" }
+                move: { enable: true, speed: 3, direction: "none" }
             }
         });
 
