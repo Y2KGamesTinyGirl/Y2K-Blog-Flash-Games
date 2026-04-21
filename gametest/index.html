@@ -1,26 +1,51 @@
-<style> 
-body { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  margin: 0; 
-} 
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8"> 
+  <title></title> 
 
-#game-container { 
-  width: 800px; 
-  height: 600px; 
-  position: relative; 
-  top: 100px; 
-  left: 140px; 
-  border: 2px solid #000; /* Adiciona uma borda preta de 2px */
-} 
+  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script> 
 
-h1 { 
-  position: absolute; 
-  top: 90px; 
-  text-align: center; 
-  width: 100%; 
-  color: #333; 
-} 
-</style>
+  <style> 
+    body { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      margin: 0; 
+    } 
+
+    #game-container { 
+      width: 800px; 
+      height: 600px; 
+      position: relative; 
+      top: 100px; 
+      left: 140px; 
+      border: 2px solid #000; /* Adiciona uma borda preta de 2px */
+    } 
+
+    h1 { 
+      position: absolute; 
+      top: 90px; 
+      text-align: center; 
+      width: 100%; 
+      color: #333; 
+    } 
+  </style>
+</head>
+<body> 
+  <div id="game-container"></div> <!-- Container onde o jogo será carregado --> 
+
+  <script> 
+    window.addEventListener("load", () => { 
+      const ruffle = window.RufflePlayer.newest(); // Cria a versão mais recente do player do Ruffle 
+      const player = ruffle.createPlayer(); // Cria o player para rodar o arquivo SWF 
+
+      const container = document.getElementById("game-container"); // Pega o container onde o jogo será inserido 
+      container.appendChild(player); // Adiciona o player ao container 
+
+      player.load("410250_burger_restaurant.swf"); // Carrega o jogo Flash (arquivo SWF) no player 
+    }); 
+  </script>
+</body>
+</html>
