@@ -12,21 +12,24 @@
             justify-content: center;
             align-items: center;
             height: 200vh;
-            margin: 10;
+            margin: 0;
             background-color: #FFC7EA; /* Cor de fundo da página */
         }
 
         #game-container {
-            width: 700px;
-            height: 700px;
+            width: 100%;
+            height: 80vh;
+            max-width: 800px;  /* Ajuste o valor conforme necessário */
+            max-height: 600px; /* Ajuste o valor conforme necessário */
             position: absolute;
-            top: 200px;
-            left: 200px;
+            top: 10vh;
+            left: 10vw;
             border: 20px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
             border-radius: 55px; /* Bordas arredondadas */
             background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
             box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
             backdrop-filter: blur(50px); /* Efeito de desfoque para imitar vidro */
+            overflow: hidden; /* Garante que o conteúdo não saia do contêiner */
         }
 
         h1 {
@@ -50,6 +53,10 @@
             container.appendChild(player);
 
             player.load("penguin-diner-801.swf");
+
+            // Ajuste de escala
+            player.style.transform = "scale(1)";  // Tente ajustar o valor da escala para "scale(0.8)" ou "scale(1.2)" se necessário.
+            player.style.transformOrigin = "top left";  // Alinha o jogo ao canto superior esquerdo
         });
     </script>
 </body>
