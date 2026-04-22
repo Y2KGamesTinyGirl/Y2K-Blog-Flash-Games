@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>🌺 Y2K Games</title>
-
     <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
     <style>
@@ -49,7 +48,24 @@
             const container = document.getElementById("game-container");
             container.appendChild(player);
 
-            player.load("papastacomia_v2.swf");
+            // Lista de arquivos SWF a serem carregados, na ordem correta
+            const swfFiles = ["papastacomia_v2.swf", "v5_tacomiaHD.swf", "services.swf"];
+            
+            // Função para carregar os SWFs sequencialmente
+            function carregarSWFSequencial(swfFiles, index = 0) {
+                if (index < swfFiles.length) {
+                    // Carrega o arquivo SWF atual
+                    player.load(swfFiles[index]);
+                    
+                    // Quando o SWF for carregado, chama a função para carregar o próximo
+                    player.addEventListener('loaded', () => {
+                        carregarSWFSequencial(swfFiles, index + 1);
+                    });
+                }
+            }
+
+            // Inicia o carregamento dos SWFs
+            carregarSWFSequencial(swfFiles);
         });
     </script>
 </body>
