@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+    <title>🌺 Y2K Games</title>
+
+    <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFC7EA; /* Cor de fundo da página */
+        }
+
+        #game-container {
+            width: 550px;
+            height: 400px;
+            position: center;
+            top: 100px;
+            left: 100px;
+            border: 20px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
+            border-radius: 55px; /* Bordas arredondadas */
+            background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
+            box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
+            backdrop-filter: blur(50px); /* Efeito de desfoque para imitar vidro */
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            width: 100%;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container"></div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+
+            const container = document.getElementById("game-container");
+            container.appendChild(player);
+
+            player.load("shopaholicparis.swf");
+        });
+    </script>
+</body>
+</html>
