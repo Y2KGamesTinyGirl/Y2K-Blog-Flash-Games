@@ -1,87 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>🌺 Y2K Games</title>
+ <meta charset="UTF-8">
+    <title>🌺 Y2K Games</title>
 
-  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
-  <style>
-    body {
-      display: flex;
-      justify-content: center; /* Centraliza o conteúdo horizontalmente */
-      align-items: center;     /* Centraliza o conteúdo verticalmente */
-      height: 100vh;
-      margin: 0;
-      background-color: #FFC7EA; /* Cor de fundo da página */
-    }
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFC7EA; /* Cor de fundo da página */
+        }
 
-    #game-container {
-      width: 600px;
-      height: 400px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border: 20px solid rgba(255, 165, 0, 0.7);
-      border-radius: 55px;
-      background: rgba(255, 165, 0, 0.1);
-      box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8);
-      backdrop-filter: blur(50px);
-      display: flex;
-      justify-content: space-around; /* Espaço entre os elementos */
-    }
+        #game-container {
+            width: 550px;
+            height: 400px;
+            position: center;
+            top: 100px;
+            left: 100px;
+            border: 20px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
+            border-radius: 55px; /* Bordas arredondadas */
+            background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
+            box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
+            backdrop-filter: blur(50px); /* Efeito de desfoque para imitar vidro */
+        }
 
-    #game-container > div {
-      width: 30%; /* Cada parte do jogo vai ocupar 30% do contêiner */
-      height: 100%;
-    }
-
-    #game-container > div > object {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    h1 {
-      position: absolute;
-      top: 20px;
-      text-align: center;
-      width: 100%;
-      color: #333;
-    }
-  </style>
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            width: 100%;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-  <div id="game-container">
-    <div id="part1"></div>
-    <div id="part2"></div>
-    <div id="part3"></div>
-  </div>
+    <div id="game-container"></div>
 
-  <script>
-    // Função para carregar um arquivo SWF em uma parte específica do contêiner
-    function loadSWF(swfFile, partId) {
-      const ruffle = window.RufflePlayer.newest();
-      const player = ruffle.createPlayer();
+    <script>
+        window.addEventListener("load", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
 
-      const container = document.getElementById(partId);
-      container.appendChild(player);
+            const container = document.getElementById("game-container");
+            container.appendChild(player);
 
-      player.load(swfFile);
-
-      // Ajuste para preencher completamente o contêiner sem cortar
-      player.style.width = "100%";
-      player.style.height = "100%";
-      player.style.objectFit = "contain"; // Redimensiona o conteúdo sem cortar
-    }
-
-    // Carregar os três arquivos SWF simultaneamente
-    window.addEventListener("load", () => {
-      loadSWF("papas-taco-mia.swf", "part1");
-      loadSWF("PapasTacop.swf", "part2");
-      loadSWF("services.swf", "part3");
-    });
-  </script>
+            player.load("papastacomia_v2");
+        });
+    </script>
 </body>
 </html>
