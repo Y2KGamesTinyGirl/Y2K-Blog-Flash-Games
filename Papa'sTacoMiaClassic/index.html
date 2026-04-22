@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>🌺 Y2K Games</title>
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center; /* Centraliza o conteúdo horizontalmente */
+      align-items: center;     /* Centraliza o conteúdo verticalmente */
+      height: 100vh;
+      margin: 0;
+      background-color: #FFC7EA; /* Cor de fundo da página */
+    }
+
+    #game-container {
+      width: 600px;
+      height: 400px;
+      position: absolute; /* Corrigido para 'absolute' */
+      top: 50%;            /* Centraliza o contêiner verticalmente */
+      left: 50%;           /* Centraliza o contêiner horizontalmente */
+      transform: translate(-50%, -50%); /* Compensa o 50% de deslocamento e centraliza */
+      border: 20px solid rgba(255, 165, 0, 0.7); /* Borda laranja com transparência */
+      border-radius: 55px; /* Bordas arredondadas */
+      background: rgba(255, 165, 0, 0.1); /* Fundo transparente com tom laranja */
+      box-shadow: 0 0 55px 5px rgba(255, 165, 0, 0.8); /* Efeito neon laranja */
+      backdrop-filter: blur(50px); /* Efeito de desfoque para imitar vidro */
+    }
+
+    /* Ajusta o jogo para preencher completamente o contêiner */
+    #game-container > object {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Redimensiona o conteúdo sem cortar */
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      width: 100%;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>🌺 Y2K Games</h1>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+
+      const container = document.getElementById("game-container");
+      container.appendChild(player);
+
+      player.load("papas-taco-mia.swf");
+
+      // Ajuste para preencher completamente o contêiner sem cortar
+      player.style.width = "100%";
+      player.style.height = "100%";
+      player.style.objectFit = "contain"; // Redimensiona o conteúdo sem cortar
+    });
+  </script>
+</body>
+</html>
