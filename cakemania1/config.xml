@@ -1,0 +1,18 @@
+<config>
+	<Game>
+		<MSZone>0</MSZone>
+		<HelpButtonEnabled>1</HelpButtonEnabled>
+
+		<HelpURL>http://www.gamefools.com</HelpURL>
+		<HelpWindow>_blank</HelpWindow>
+
+		<DownloadURL>http://www.gamefools.com/pc-games/cake-mania.html</DownloadURL>
+		<DownloadWindow>_blank</DownloadWindow>
+
+		<LoadingDelay>000</LoadingDelay>
+	</Game>
+	<Logo>
+		  <logo src="publisher.jpg" x="5" y="320" />
+		  <sandlotlogo x="339" y="278" />
+	</Logo>
+</config>
