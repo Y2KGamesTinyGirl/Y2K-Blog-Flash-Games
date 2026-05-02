@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<!-- http://www.fliplineads.com/crossdomain.xml -->
-<cross-domain-policy>
-  <site-control permitted-cross-domain-policies="master-only"/>
-  <allow-access-from domain="*" />
-</cross-domain-policy>
-
