@@ -9,7 +9,7 @@
 	</Splash>	
 
 	<Logo>
-		<logo src="/trial/publisher.png" x="10" y="350" />
-		<sandlotlogo src="/trial/sandlot_logo.png" x="440" y="380" />
-	</Logo>
+  <logo src="publisher.png" x="10" y="350"/>
+  <sandlotlogo src="sandlot_logo.png" x="440" y="380"/>
+</Logo>
 </config>
