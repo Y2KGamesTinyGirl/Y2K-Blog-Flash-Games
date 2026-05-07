@@ -1,0 +1,15 @@
+<config>
+	<Game>
+		<DownloadURL>http://www.gamefools.com/pc-games/cake-mania-2.html</DownloadURL>
+		<DownloadWindow>_blank</DownloadWindow>
+
+		<LoadingDelay>000</LoadingDelay>
+	</Game>
+	<Splash>
+	</Splash>	
+
+	<Logo>
+		<logo src="./trial/publisher.png" x="10" y="350" />
+		<sandlotlogo src="./trial/sandlot_logo.png" x="440" y="380" />
+	</Logo>
+</config>
