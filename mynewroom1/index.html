@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>🌺 Y2K Games</title>
 
-  <!-- Carrega o emulador Ruffle -->
-  <script src="https://unpkg.com"></script>
+  <!-- CORRIGIDO: O caminho correto para carregar o emulador via UNPKG -->
+<script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
   <style>
     body {
@@ -52,10 +52,10 @@
 </head>
 <body>
 
-  <div id="game-container">
-    <h1>🌺 Y2K Games</h1>
-  </div>
+   <h1></h1>
 
+  <div id="game-container"></div>
+  
   <script>
     // Configurações para forçar o jogo em Flash a esticar e alinhar os cliques
     window.RufflePlayer = window.RufflePlayer || {};
