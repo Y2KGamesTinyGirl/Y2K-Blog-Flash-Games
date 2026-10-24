@@ -54,7 +54,10 @@
   <script>
     window.addEventListener("load", () => {
       const ruffle = window.RufflePlayer.newest();
-      const player = ruffle.createPlayer();
+      const player = ruffle.createPlayer(); 
+        "autoplay": "on",
+        "unmuteOverlay": "hidden"
+    };
 
       const container = document.getElementById("game-container");
       container.appendChild(player);
