@@ -5,7 +5,7 @@
   <title>🌺 Y2K Games</title>
 
   <!-- CORRIGIDO: O caminho correto para carregar o emulador via UNPKG -->
-<script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
 
   <style>
     body {
@@ -14,7 +14,14 @@
       align-items: center;     /* Centraliza o conteúdo verticalmente */
       height: 100vh;
       margin: 0;
-      background-color: #FFC7EA; /* Cor de fundo da página */
+      
+      /* Configurações do seu GIF de fundo */
+      background-color: #FFC7EA; /* Cor de reserva enquanto o GIF carrega */
+      background-image: url("brilho.gif"); /* Troque pelo nome exato do seu arquivo GIF */
+      background-size: cover; /* Faz o GIF preencher toda a tela sem deixar espaços vazios */
+      background-position: center; /* Centraliza o GIF na tela */
+      background-repeat: no-repeat; /* Evita que a imagem fique se repetindo em blocos */
+      
       overflow: hidden; /* Evita barras de rolagem na tela */
     }
 
