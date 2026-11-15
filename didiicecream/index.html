@@ -55,9 +55,7 @@
     window.addEventListener("load", () => {
       const ruffle = window.RufflePlayer.newest();
       const player = ruffle.createPlayer();
-       "contextMenu": "on", // Garante que o menu de clique direito apareça
-        "showSwfDownload": true // Adiciona a opção de baixar o SWF no menu
-    };
+
 
       const container = document.getElementById("game-container");
       container.appendChild(player);
